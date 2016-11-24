@@ -1,5 +1,8 @@
 config = require('./services/config');
 
+var DB = require('./services/database');
+db = new DB(config.db_connection);
+
 /* Routers */
 
 var bodyParser = require('body-parser');
