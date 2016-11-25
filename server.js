@@ -4,6 +4,7 @@ var DB = require('./services/database');
 db = new DB(config.db_connection);
 
 var users = require('./routers/user');
+var entities = require('./routers/entity');
 
 /* Routers */
 
@@ -18,6 +19,7 @@ app.set('port', (process.env.PORT || 5000));
 
 /* ENDPOINTS */
 app.use('/user', users);
+app.use('/entity', entities);
 
 
 app.listen(app.get('port'), function() {
